@@ -69,11 +69,14 @@ public class UI {
     }
 
     public void removeProductUI(){
+        Service service = new Service();
         System.out.println("\n--------------------------");
         System.out.println("Halaman Hapus Produk");
         System.out.println("--------------------------");
-        Service service = new Service();
         service.displayProducts();
+        System.out.println("Produk mana yang ingin anda hapus? (masukan berdasarkan angka urutan)");
+        System.out.print("Input: ");
+        service.removeProducts(input);
     }
 
     public String getQuit(){

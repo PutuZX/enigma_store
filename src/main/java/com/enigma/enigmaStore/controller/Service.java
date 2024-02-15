@@ -1,6 +1,7 @@
 package com.enigma.enigmaStore.controller;
 
 import java.util.Date;
+import java.util.Scanner;
 import java.util.UUID;
 
 import com.enigma.enigmaStore.model.Product;
@@ -57,5 +58,22 @@ public class Service {
             index += i;
             System.out.printf("%d. %s | %s | %s | %f | %tF %n", index, product.getId(), product.getName(), product.getBrand(), product.getPrice(), product.getDate());
         }
+    }
+
+    public void removeProducts(Scanner input){
+        ProductController products = ProductController.getInstance();
+        if(input.hasNextInt()){
+            int index = input.nextInt();
+            index--;
+            for(int i = 0; i<products.getTotalProduct(); i++){
+                Product product = products.getProduct(i);
+                if(index == i){
+                    products.removeProduct(product);
+                }
+            }
+        } else{
+            System.out.println(ui.getInvalidInput());
+        }
+        ui.menu();     
     }
 }
