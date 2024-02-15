@@ -1,7 +1,9 @@
 package com.enigma.enigmaStore.controller;
 
-import java.util.Scanner;
+import java.util.Date;
+import java.util.UUID;
 
+import com.enigma.enigmaStore.model.Product;
 import com.enigma.enigmaStore.util.Validator;
 import com.enigma.enigmaStore.view.UI;
 
@@ -39,7 +41,11 @@ public class Service {
             System.out.println(ui.getInvalidInput());
             ui.menu();
         } else{
-            System.out.println("All Valid");
+           ProductController controller = new ProductController();
+           controller.addProduct(new Product(UUID.randomUUID().toString(), name, brand, price, new Date()));
+           controller.getProduct(0);
+           System.out.println("\nInputted Product: ");
+           System.out.println(controller.getProduct(0));
         }
     }
 }

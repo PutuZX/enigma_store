@@ -54,7 +54,7 @@ public class Product {
     }
 
     public String toString(){
-        return String.format("%s %s %s %f %tF", id, name, brand, price, date);
+        return String.format("[ %s | %s | %s | %f | %tF ]", id, name, brand, price, date);
     }
 
 }
