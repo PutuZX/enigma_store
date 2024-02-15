@@ -35,7 +35,7 @@ public class UI {
         String tempBrand = "";
         double tempPrice = 0;
         System.out.println("\n--------------------------");
-        System.out.println("Add Product Page");
+        System.out.println("Halaman Tambah Produk");
         System.out.println("--------------------------");
         System.out.print("Masukan nama product: ");
         tempName = validator.nameValidator(input);
@@ -47,7 +47,13 @@ public class UI {
     }
 
     public void updateProductUI(){
-        System.out.println("This is update product page");
+        System.out.println("\n--------------------------");
+        System.out.println("Halaman Ubah Produk");
+        System.out.println("--------------------------");
+        System.out.println("Apa yang ingin anda ubah?");
+        System.out.println("1.Nama\t2.Merek\t3.Harga");
+        System.out.print("Input: ");
+
     }
 
     public void findProductUI(){
@@ -55,11 +61,19 @@ public class UI {
     }
 
     public void viewProductUI(){
-        System.out.println("This is view product page");
+        System.out.println("\n--------------------------");
+        System.out.println("Halaman Lihat Produk");
+        System.out.println("--------------------------");
+        Service service = new Service();
+        service.displayProducts();
     }
 
     public void removeProductUI(){
-        System.out.println("This is remove product page");
+        System.out.println("\n--------------------------");
+        System.out.println("Halaman Hapus Produk");
+        System.out.println("--------------------------");
+        Service service = new Service();
+        service.displayProducts();
     }
 
     public String getQuit(){

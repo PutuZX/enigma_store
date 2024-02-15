@@ -48,4 +48,14 @@ public class Service {
            System.out.println(controller.getProduct(0));
         }
     }
+
+    public void displayProducts(){
+        ProductController products = ProductController.getInstance();
+        int index = 1;
+        for(int i = 0; i<products.getTotalProduct(); i++){
+            Product product = products.getProduct(i);
+            index += i;
+            System.out.printf("%d. %s | %s | %s | %f | %tF %n", index, product.getId(), product.getName(), product.getBrand(), product.getPrice(), product.getDate());
+        }
+    }
 }

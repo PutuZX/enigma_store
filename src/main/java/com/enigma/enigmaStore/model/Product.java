@@ -33,6 +33,10 @@ public class Product {
         return this.price;
     }
 
+    public Date getDate(){
+        return this.date;
+    }
+
     public void setId(String id){
         this.id = id;
     }
